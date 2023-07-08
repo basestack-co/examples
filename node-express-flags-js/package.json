@@ -1,0 +1,19 @@
+{
+  "name": "express-flags",
+  "version": "1.0.0",
+  "description": "Example using Flags JS SDK on a Express JS Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Vitor Amaral",
+  "license": "ISC",
+  "dependencies": {
+    "@basestack/flags-js-sdk": "^0.0.13-alpha",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "isomorphic-unfetch": "^4.0.2",
+    "zustand": "^4.3.9"
+  }
+}
