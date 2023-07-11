@@ -9,16 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@basestack/flags-js-sdk": "^0.0.13-alpha",
+    "@basestack/flags-js-sdk": "^0.0.14-alpha",
     "@basestack/flags-react-sdk": "^0.0.9-alpha",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
-    "isomorphic-unfetch": "^4.0.2",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6",
-    "zustand": "^4.3.9"
+    "typescript": "5.1.6"
   }
 }

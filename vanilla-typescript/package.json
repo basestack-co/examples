@@ -12,9 +12,7 @@
   "author": "Basestack",
   "license": "MIT",
   "dependencies": {
-    "@basestack/flags-js-sdk": "^0.0.13-alpha",
-    "isomorphic-unfetch": "^4.0.2",
-    "zustand": "^4.3.9"
+    "@basestack/flags-js-sdk": "^0.0.14-alpha"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",

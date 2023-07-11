@@ -1,3 +1,5 @@
+"use client";
+
 // BaseStack Flags SDK
 import FlagsJS from "@basestack/flags-js-sdk";
 import { FlagsProvider } from "@basestack/flags-react-sdk";

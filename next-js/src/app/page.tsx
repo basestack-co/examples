@@ -1,3 +1,5 @@
+"use client";
+
 // BaseStack Flags SDK
 import { useFlag } from "@basestack/flags-react-sdk";
 
