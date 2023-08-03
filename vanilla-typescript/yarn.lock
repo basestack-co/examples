@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@basestack/flags-js-sdk@^0.0.14-alpha":
-  version "0.0.14-alpha"
-  resolved "https://registry.yarnpkg.com/@basestack/flags-js-sdk/-/flags-js-sdk-0.0.14-alpha.tgz#a65ce7acbd437b0153341b38b1d7f65ddadc27f4"
-  integrity sha512-4Nwi5pLXPQ5kBUqitBGvcfiTiJJWcoy6cMO0wVHq0e6WV86cR6uHdhiet6KfTwr9ELzVJFqaE8HayT6Ham7UHw==
+"@basestack/flags-js-sdk@^0.0.15-alpha":
+  version "0.0.15-alpha"
+  resolved "https://registry.yarnpkg.com/@basestack/flags-js-sdk/-/flags-js-sdk-0.0.15-alpha.tgz#7e12dcfb2271a1ab018be2f890736211dcecf8b9"
+  integrity sha512-pKtA+n72e39hDJ/TShdgqIP1xyiM0n00xjLWktEXpfgLvAWGCOJygJqyr2Dq0shh+IYHtin6xxG0PzmuSQWZhA==
   dependencies:
     cross-fetch "^4.0.0"
     zustand "^4.3.9"

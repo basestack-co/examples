@@ -1164,18 +1164,18 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@basestack/flags-js-sdk@^0.0.14-alpha":
-  version "0.0.14-alpha"
-  resolved "https://registry.yarnpkg.com/@basestack/flags-js-sdk/-/flags-js-sdk-0.0.14-alpha.tgz#a65ce7acbd437b0153341b38b1d7f65ddadc27f4"
-  integrity sha512-4Nwi5pLXPQ5kBUqitBGvcfiTiJJWcoy6cMO0wVHq0e6WV86cR6uHdhiet6KfTwr9ELzVJFqaE8HayT6Ham7UHw==
+"@basestack/flags-js-sdk@^0.0.18-alpha":
+  version "0.0.18-alpha"
+  resolved "https://registry.yarnpkg.com/@basestack/flags-js-sdk/-/flags-js-sdk-0.0.18-alpha.tgz#77522abcd57e696917bb66dc4c666675190efc6d"
+  integrity sha512-ImKw6trx4nJBS4YOYW+eXOX0rERwSyu+KlMf/OgoaiQHqxX/ZtJvXuXdhzHyhziaDfE6pUy5ZooTigPica2cZg==
   dependencies:
     cross-fetch "^4.0.0"
     zustand "^4.3.9"
 
-"@basestack/flags-react-sdk@^0.0.9-alpha":
-  version "0.0.9-alpha"
-  resolved "https://registry.yarnpkg.com/@basestack/flags-react-sdk/-/flags-react-sdk-0.0.9-alpha.tgz#d754b13244d093b018e78f2736552c27f436126d"
-  integrity sha512-pSkVIJov2vkA/FQq6q/+AFgsotsIqfNfTtV3DOMYOCYaPGX+bf+pIRmxBuhxYZU28rukcRZWFLqcqN0Jg7X59Q==
+"@basestack/flags-react-sdk@^0.0.13-alpha":
+  version "0.0.13-alpha"
+  resolved "https://registry.yarnpkg.com/@basestack/flags-react-sdk/-/flags-react-sdk-0.0.13-alpha.tgz#67ce51633e06ebd2167b7a4d3be8b0d7a8c82e70"
+  integrity sha512-XGXRDy/flq4A3KsQheoV5IwqKjRvMbnshSWQEK1CWIvDFVr8bl7QYu1IEBd8hmA/dLOKii8BSYJ/8wa6L0HcPQ==
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"

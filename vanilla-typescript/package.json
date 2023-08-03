@@ -12,7 +12,7 @@
   "author": "Basestack",
   "license": "MIT",
   "dependencies": {
-    "@basestack/flags-js-sdk": "^0.0.14-alpha"
+    "@basestack/flags-js-sdk": "^0.0.15-alpha"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",

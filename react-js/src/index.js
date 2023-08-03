@@ -12,13 +12,12 @@ const sdk = new FlagsJS({
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <FlagsProvider
-      sdk={sdk}
-      onSuccessfulInit={() => console.log("Successful Init FlagsJS SDK")}
-    >
-      <App />
-    </FlagsProvider>
-  </React.StrictMode>,
+  <FlagsProvider
+    sdk={sdk}
+    onSuccessfulInit={() => console.log("Successful Init FlagsJS SDK")}
+  >
+    <App />
+  </FlagsProvider>
 );

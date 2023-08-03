@@ -14,7 +14,7 @@ const sdk = new FlagsJS({
 
 app.get("/", async (req, res) => {
   try {
-    const flags = await sdk.flagAsync("header");
+    const flags = await sdk.flagAsync("footer_v2");
 
     if (flags.enabled) {
       res.send("Header is enabled");

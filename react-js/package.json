@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@basestack/flags-js-sdk": "^0.0.14-alpha",
-    "@basestack/flags-react-sdk": "^0.0.9-alpha",
+    "@basestack/flags-js-sdk": "^0.0.18-alpha",
+    "@basestack/flags-react-sdk": "^0.0.13-alpha",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
