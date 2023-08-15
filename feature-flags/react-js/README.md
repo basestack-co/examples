@@ -45,7 +45,7 @@ root.render(
     onSuccessfulInit={() => console.log("Successful Init FlagsJS SDK")}
   >
     <App />
-  </FlagsProvider>
+  </FlagsProvider>,
 );
 ```
 

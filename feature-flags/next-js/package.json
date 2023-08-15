@@ -10,8 +10,8 @@
     "update:packages": "yarn upgrade-interactive --latest"
   },
   "dependencies": {
-    "@basestack/flags-js": "^1.0.1",
-    "@basestack/flags-react": "^1.0.1",
+    "@basestack/flags-js": "^1.0.2",
+    "@basestack/flags-react": "^1.0.2",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
