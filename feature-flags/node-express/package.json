@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "update:packages": "yarn upgrade-interactive --latest"
   },
   "author": "Vitor Amaral",
   "license": "ISC",
   "dependencies": {
-    "@basestack/flags-js-sdk": "^0.0.15-alpha",
+    "@basestack/flags-js-sdk": "^0.0.26-alpha",
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
   }
