@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+## React Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Integration with React helps and facilitates the process of testing and developing features in production and other environments. This integration consists of a set of plug-and-play components to accelerate the development process in your project.
 
-## Available Scripts
+Start by installing the library following the instructions below.
 
-In the project directory, you can run:
+Quick links
 
-### `npm start`
+- [About](https://basestack.co/)
+- [Documentation](https://docs.basestack.co/feature-flags/sdks/react)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+First, let's install some packages!
 
-### `npm test`
+```bash
+npm install --save @basestack/flags-js @basestack/flags-react
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+or with yarn
 
-### `npm run build`
+```bash
+yarn add @basestack/flags-js @basestack/flags-react
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Create a client provider
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+With all the dependencies you installed, let's create your Basestack FlagsJS Client.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In our `index.js` file, let's import `FlagsProvider` from `@basestack/flags-react` and add the configuration params based on your Basestack project. This params values can be found on your project settings page.
 
-### `npm run eject`
+```js
+import FlagsJS from "@basestack/flags-js";
+import { FlagsProvider } from "@basestack/flags-react";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+const sdk = new FlagsJS({
+  apiUrl: "https://your-basestack-hosted-app-domain.com/api/v1",
+  projectKey: "xxxxx",
+  envKey: "xxxxx",
+});
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+root.render(
+  <FlagsProvider
+    sdk={sdk}
+    onSuccessfulInit={() => console.log("Successful Init FlagsJS SDK")}
+  >
+    <App />
+  </FlagsProvider>
+);
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+That's it! Now your app is ready to start using feature flags and other features. Let's start using by importing some pre-built components inside of `@basestack/flags-react`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Flags
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Feature flags are an excellent way to test features in production. Take advantage of different environments to hide or show your features. This can be used to facilitate the development process on project features that are not yet ready to be presented in production or even disable in real-time if any of the features in production are malfunctioning
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### useFlag Hook
 
-### Code Splitting
+The library support React hooks. Use `useFlag` for a programmatical method. There's no limit to `useFlag`, just change the names. See the examples.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+import {  useFlag } from "@basestack/flags-react";
 
-### Analyzing the Bundle Size
+...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const AppComponent = () => {
+  const { enabled } = useFlag("private_msg_2");
+ const privateChat = useFlag("private_chat");
 
-### Making a Progressive Web App
+  return (
+    <div>
+      {enabled && <div>This is a great feature</div>}
+     {privateChat.enabled && <div>This is a great private chat</div>}
+    </div>
+  );
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### useFlag Hook with Remote Flags
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Remote Flags have the same normal characteristics as a Flag but they can have a data payload. This data payload allows you to provide real-time properties to your project's features. If, for example, some of the features of a project need to change color, size or even other data in different environments, then the payload of data from a Remote Flag is the most suitable.
 
-### Deployment
+```js
+import { useFlag } from "@basestack/flags-react";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+...
 
-### `npm run build` fails to minify
+const AppComponent = () => {
+  const { enable, payload } = useFlag("my_remote_flag");
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  return (
+    <div>
+      {enabled && <div style={{ color: payload.color }}>This is a great remote feature</div>}
+    </div>
+  );
+};
+```
+
+### Flag Component
+
+The pre-built component `Flag` accepts a component child or children, this component inside the `<Flag>` wrapper only showed when the flag exists in your Basestack Feature Flags Project.
+
+Notice: The behavior of the flag can be based on the project or the environments.
+
+```js
+import {  Flag } from "@basestack/flags-react";
+
+...
+
+<Flag name="private_msg_2">
+  <YourFeature/>
+</Flag>
+
+```

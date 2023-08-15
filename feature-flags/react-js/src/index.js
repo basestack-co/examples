@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 // BaseStack Flags SDK
-import FlagsJS from "@basestack/flags-js-sdk";
-import { FlagsProvider } from "@basestack/flags-react-sdk";
+import FlagsJS from "@basestack/flags-js";
+import { FlagsProvider } from "@basestack/flags-react";
 
 const sdk = new FlagsJS({
   apiUrl: process.env.REACT_APP_BASESTACK_API_URL,

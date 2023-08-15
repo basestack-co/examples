@@ -1,7 +1,7 @@
 "use client";
 
 // BaseStack Flags SDK
-import { useFlag } from "@basestack/flags-react-sdk";
+import { useFlag } from "@basestack/flags-react";
 
 const Header = () => {
   const { enabled } = useFlag("header");

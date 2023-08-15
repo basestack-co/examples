@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const FlagsJS = require("@basestack/flags-js-sdk").default;
+const FlagsJS = require("@basestack/flags-js").default;
 const app = express();
 const port = 3000;
 

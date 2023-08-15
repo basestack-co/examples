@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## NextJS Integration
 
-## Getting Started
+When working with a Next.js project, you can use the React SDK. However, if you're using the App dir, make sure to add the use client on top of the file. While we're working on adding support for Server Components, you have the option to use the JavaScript SDK with Node or explore the REST API in the meantime.
 
-First, run the development server:
+Start by installing the library following the instructions below.
+
+Quick links
+
+- [About](https://basestack.co/)
+- [Documentation](https://docs.basestack.co/feature-flags/sdks/react#nextjs-support)
+
+## Installation
+
+First, let's install some packages!
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install --save @basestack/flags-js @basestack/flags-react
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or with yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add @basestack/flags-js @basestack/flags-react
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Create a client provider
 
-## Learn More
+With all the dependencies you installed, let's create your Basestack FlagsJS Client.
 
-To learn more about Next.js, take a look at the following resources:
+```js
+"use client";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+import FlagsJS from "@basestack/flags-js-sdk";
+import { FlagsProvider } from "@basestack/flags-react-sdk";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+const sdk = new FlagsJS({
+  apiUrl: "https://your-basestack-hosted-app-domain.com/api/v1",
+  projectKey: "xxxxx",
+  envKey: "xxxxx",
+});
 
-## Deploy on Vercel
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <FlagsProvider
+          sdk={sdk}
+          onSuccessfulInit={() => console.log("Successful Init FlagsJS SDK")}
+        >
+          {children}
+        </FlagsProvider>
+      </body>
+    </html>
+  );
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+That's it! Now your app is ready to start using feature flags and other features. Let's start using by importing some pre-built components inside of `@basestack/flags-react`.
