@@ -1,0 +1,31 @@
+{
+  "name": "@examples/next-pages-router",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start --webpack",
+    "lint": "next lint",
+    "update:deps": "bun update -i"
+  },
+  "dependencies": {
+    "@basestack/vercel-flags-sdk-adapter": "^1.0.4",
+    "@edge-runtime/cookies": "^6.0.0",
+    "flags": "^4.1.0",
+    "next": "16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.3.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

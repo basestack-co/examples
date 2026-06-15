@@ -1,0 +1,21 @@
+{
+  "name": "example-next-app-router",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bunx next dev --port 4001",
+    "build": "bunx next build",
+    "start": "bunx next start -p 4001",
+    "update:deps": "bun update -i"
+  },
+  "dependencies": {
+    "@basestack/flags-react": "^1.2.2",
+    "next": "16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.2",
+    "typescript": "^6.0.3"
+  }
+}

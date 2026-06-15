@@ -1,0 +1,14 @@
+{
+  "name": "flags-server-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "update:deps": "bun update -i"
+  },
+  "dependencies": {
+    "hono": "^4.12.18",
+    "@basestack/flags-js": "^1.2.1"
+  }
+}

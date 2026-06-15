@@ -1,0 +1,20 @@
+{
+  "name": "flags-vue-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bunx vite",
+    "build": "bunx vite build",
+    "preview": "bunx vite preview",
+    "update:deps": "bun update -i"
+  },
+  "dependencies": {
+    "@basestack/flags-js": "^1.2.1",
+    "vue": "^3.5.34"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.11"
+  }
+}
