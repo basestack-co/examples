@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# OpenFeature — React example
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Client-side sample using the [OpenFeature](https://openfeature.dev) web SDK with the `@basestack/openfeature-provider` in a React + Vite app.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework:** React 19
+- **Bundler:** Vite
+- **Packages:** `@openfeature/web-sdk`, `@openfeature/react-sdk`, `@basestack/openfeature-provider`
+- **Port:** Vite default (5173)
 
-## Expanding the ESLint configuration
+## What it does
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Initializes the Basestack web provider and evaluates flags through OpenFeature React hooks:
 
-- Configure the top-level `parserOptions` property like this:
+- **`src/main.tsx`** — creates `createBasestackWebProvider(...)`, registers it with `OpenFeature.setProvider()`, and wraps the app in `OpenFeatureProvider`
+- **`src/App.tsx`** — reads `initiative_overview` with both `useFlag()` (full evaluation details) and `useBooleanFlagValue()` (boolean shorthand)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The provider prefetches flags on startup and refreshes every 30 seconds.
+
+## Prerequisites
+
+- [Bun](https://bun.sh) or npm
+- A running Basestack API (defaults to `http://localhost:4000/v1`)
+
+## Configuration
+
+Edit the provider options in `src/main.tsx`:
+
+```ts
+const provider = createBasestackWebProvider({
+  apiUrl: "http://localhost:4000/v1",
+  projectKey: "your-project-key",
+  environmentKey: "your-environment-key",
+  prefetch: true,
+  refreshIntervalMs: 30_000,
+});
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Running
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+cd feature-flags/open-feature/react
+bun install
+bun run dev
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Open the URL Vite prints (default `http://localhost:5173`).
+
+### Production build
+
+```bash
+bun run build
+bun run preview
 ```

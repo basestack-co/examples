@@ -1,42 +1,57 @@
-## Server Example (Hono + Bun)
+# JavaScript server example
 
-This example verifies the SDK works in a server/Bun runtime by exposing Hono routes that call:
+Server-side sample using `@basestack/flags-js` with Hono and Bun.
 
-- `getFlag("header")`
-- `getPreviewFlags()`
-- `submitPreviewFeedback(...)`
-- `submitCodeReferences(...)`
+## Stack
 
-### Running
+- **Runtime / package manager:** Bun
+- **Framework:** Hono
+- **SDK:** `@basestack/flags-js`
+- **Port:** 8080
+
+## What it does
+
+A small HTTP API that evaluates flags on the server and exposes them as JSON routes:
+
+| Route | Method | SDK call |
+| --- | --- | --- |
+| `/` | GET | `getFlag("initiative_overview")` |
+| `/preview` | GET | `getPreviewFlags()` |
+| `/preview/feedback` | POST | `submitPreviewFeedback(...)` |
+| `/code-refs` | POST | `submitCodeReferences(...)` |
+
+See `src/index.ts` for route handlers and SDK setup.
+
+## Prerequisites
+
+- [Bun](https://bun.sh)
+- A running Basestack API (defaults to `http://localhost:4000/v1`)
+
+## Configuration
+
+Update the `FlagsSDK` constructor in `src/index.ts` with your project key, environment key, and API token (needed for code-reference sync).
+
+## Running
 
 ```bash
-cd examples/server
+cd feature-flags/javascript/server
 bun install
-PROJECT_KEY=xxx ENVIRONMENT_KEY=yyy API_KEY=zzz bun run dev
+bun run dev
 ```
 
-Then test:
+The server starts on `http://localhost:8080` with file watching enabled.
+
+### Testing the routes
 
 ```bash
 curl http://localhost:8080
 curl http://localhost:8080/preview
-curl -X POST http://localhost:8080/preview/feedback \
-  -H "Content-Type: application/json" \
-  -d '{
-    "flagKey": "landing-preview",
-    "mood": "HAPPY",
-    "rating": 4,
-    "description": "Example feedback from server route.",
-    "metadata": {
-      "source": "examples/server",
-      "page": "/landing",
-      "sessionId": "abc-123"
-    }
-  }'
+curl -X POST http://localhost:8080/preview/feedback
 curl -X POST http://localhost:8080/code-refs
 ```
 
-### Notes
+### Production
 
-- Dependencies point to the local SDK via `link:../..`. Run `bun run build` from the repo root first so the `dist/` output is fresh.
-- Update `src/index.ts` if you want to test other flag slugs or custom behavior.
+```bash
+bun run start
+```

@@ -1,22 +1,51 @@
-## Vue Example (Vite + Bun)
+# Vue example
 
-This Vue + Vite application mirrors the plain client setup and uses the same `FlagsSDK` configuration pulling credentials from `import.meta.env`.
+Vue 3 sample using `@basestack/flags-js` with Vite and Bun.
 
-### Run
+## Stack
 
-```bash
-cd examples/vue
-bun install
-VITE_PROJECT_KEY=xxx VITE_ENVIRONMENT_KEY=yyy bun run dev
+- **Framework:** Vue 3 (Composition API)
+- **Runtime / package manager:** Bun
+- **Bundler:** Vite
+- **SDK:** `@basestack/flags-js`
+- **Port:** 5175
+
+## What it does
+
+On mount, the app creates a `FlagsSDK` instance and fetches the `header` flag. The template shows whether the flag is enabled and renders its payload as JSON.
+
+See `src/App.vue` for the SDK setup and flag fetch logic.
+
+## Prerequisites
+
+- [Bun](https://bun.sh)
+- A running Basestack API (defaults to `http://localhost:4000/v1`)
+
+## Configuration
+
+Update the `FlagsSDK` constructor in `src/App.vue`:
+
+```ts
+const sdk = new FlagsSDK({
+  baseURL: "http://localhost:4000/v1",
+  projectKey: "your-project-key",
+  environmentKey: "your-environment-key",
+});
 ```
 
-Open [http://localhost:5175](http://localhost:5175) to see the flag output.
+## Running
 
-### Build
+```bash
+cd feature-flags/javascript/vue
+bun install
+bun run dev
+```
+
+Open [http://localhost:5175](http://localhost:5175).
+
+### Production build
 
 ```bash
 bun run build
 bun run preview
 ```
-
-The dependency on `@basestack/flags-js` is linked to the repo root, so run `bun run build` in the root project before testing.

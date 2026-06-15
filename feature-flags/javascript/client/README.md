@@ -1,28 +1,55 @@
-## Client Example (Vite + Bun)
+# JavaScript client example
 
-This minimal Vite application uses Bun as the package manager/runtime to verify the SDK works in a browser environment.
-It now demonstrates:
+Browser-side sample using `@basestack/flags-js` with Vite and Bun.
 
-- `getFlag("header")`
-- `getPreviewFlags()`
-- `submitPreviewFeedback(...)` via a sample button click, including optional `metadata`
-- `submitCodeReferences(...)` via a sample button click using `apiKey`
+## Stack
 
-### Running
+- **Runtime / package manager:** Bun
+- **Bundler:** Vite
+- **SDK:** `@basestack/flags-js`
+
+## What it does
+
+A minimal single-page app that exercises the JavaScript SDK in the browser:
+
+- Fetches a flag with `getFlag("initiative_overview")`
+- Loads preview flags with `getPreviewFlags()`
+- Submits sample preview feedback via `submitPreviewFeedback()` (including optional `metadata`)
+- Syncs code references via `submitCodeReferences()` (requires a project-scoped API token)
+
+See `src/main.ts` for the full implementation.
+
+## Prerequisites
+
+- [Bun](https://bun.sh)
+- A running Basestack API (defaults to `http://localhost:4000/v1`)
+
+## Configuration
+
+Update the `FlagsSDK` constructor in `src/main.ts`:
+
+```ts
+const sdk = new FlagsSDK({
+  baseURL: "http://localhost:4000/v1",
+  projectKey: "your-project-key",
+  environmentKey: "your-environment-key",
+  apiKey: "your-project-api-token", // required for submitCodeReferences
+});
+```
+
+## Running
 
 ```bash
-cd examples/client
+cd feature-flags/javascript/client
 bun install
 bun run dev
 ```
 
-Set `VITE_PROJECT_KEY`, `VITE_ENVIRONMENT_KEY`, and a project-scoped API token before starting the dev server if you want the code-refs example to authenticate against a real API.
+Open the URL Vite prints (default `http://localhost:5173`).
 
-### Production Build
+### Production build
 
 ```bash
 bun run build
 bun run preview
 ```
-
-The dependency on `@basestack/flags-js` points to the workspace root via `link:../..`, so be sure to run `bun run build` at the root before trying the example so the `dist/` output exists.
