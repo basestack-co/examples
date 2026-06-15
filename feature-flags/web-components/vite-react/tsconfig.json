@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["dom", "dom.iterable", "es2020"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["vite/client", "./src/components"],
+    "baseUrl": ".",
+    "paths": {
+      "@basestack/flags-wc": ["../../dist"],
+      "@basestack/flags-wc/*": ["../../dist/*"],
+      "@wc": ["../../dist"],
+      "@wc/*": ["../../dist/*"],
+      "@wc/sdk": ["../../src/sdk"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
