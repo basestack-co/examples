@@ -9,10 +9,10 @@
     "update:deps": "bun update -i"
   },
   "dependencies": {
-    "@basestack/openfeature-provider": "^1.0.5",
+    "@basestack/openfeature-provider": "^1.0.6",
     "@openfeature/core": "^1.11.0",
     "@openfeature/server-sdk": "^1.22.0",
-    "hono": "^4.12.18"
+    "hono": "^4.12.26"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

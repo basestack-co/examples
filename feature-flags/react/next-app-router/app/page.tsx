@@ -1,6 +1,10 @@
 "use client";
 
-import { Feature, useFeatureFlagModals, useFlag } from "../../../dist/client";
+import {
+  Feature,
+  useFeatureFlagModals,
+  useFlag,
+} from "@basestack/flags-react/client";
 
 export default function HomePage() {
   const {

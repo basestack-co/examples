@@ -5,14 +5,14 @@
     "": {
       "name": "flags-server-example",
       "dependencies": {
-        "@basestack/flags-js": "^1.2.1",
-        "hono": "^4.12.18",
+        "@basestack/flags-js": "^1.2.2",
+        "hono": "^4.12.26",
       },
     },
   },
   "packages": {
-    "@basestack/flags-js": ["@basestack/flags-js@1.2.1", "", {}, "sha512-zcKBsJmnt7bR1ZujvQ6xD757SNv0pvdjdyz5ZOjA+Lv0CZ4vau26Cn89BNAQeIQDnctCGqOgmKiUQNUlFMw+ig=="],
+    "@basestack/flags-js": ["@basestack/flags-js@1.2.2", "", {}, "sha512-5KoNvsor5YNALUcwnM8UdIXu44ZWxxqy07g7DqB8rpaDz7bnbmIKk/o4tBYr0zP42vrZluiBouZ2tRv+GYPysQ=="],
 
-    "hono": ["hono@4.12.18", "", {}, "sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ=="],
+    "hono": ["hono@4.12.26", "", {}, "sha512-uyZtpnYxM9CmQ7QsQknM4zN8EftNqhON1qYeIKM0Se67CCEe2c44xyGURwB0axX2fBDu1dqHrHAc1hmNT8ITkw=="],
   }
 }

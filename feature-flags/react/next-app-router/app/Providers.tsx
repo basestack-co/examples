@@ -2,7 +2,10 @@
 
 import type { Flag } from "@basestack/flags-js";
 import type { ReactNode } from "react";
-import { FeatureFlagModalsProvider, FlagsProvider } from "../../../dist/client";
+import {
+  FeatureFlagModalsProvider,
+  FlagsProvider,
+} from "@basestack/flags-react/client";
 import { flagsConfig } from "./flags-config";
 import { flagsWcConfig } from "./flags-wc-config";
 

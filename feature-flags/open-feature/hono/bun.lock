@@ -5,10 +5,10 @@
     "": {
       "name": "example-hono",
       "dependencies": {
-        "@basestack/openfeature-provider": "^1.0.5",
+        "@basestack/openfeature-provider": "^1.0.6",
         "@openfeature/core": "^1.11.0",
         "@openfeature/server-sdk": "^1.22.0",
-        "hono": "^4.12.18",
+        "hono": "^4.12.26",
       },
       "devDependencies": {
         "typescript": "^6.0.3",
@@ -16,13 +16,13 @@
     },
   },
   "packages": {
-    "@basestack/openfeature-provider": ["@basestack/openfeature-provider@1.0.5", "", { "dependencies": { "@openfeature/core": "^1.10.0" }, "peerDependencies": { "@openfeature/server-sdk": "^1.20.2", "@openfeature/web-sdk": "^1.7.3" }, "optionalPeers": ["@openfeature/server-sdk", "@openfeature/web-sdk"] }, "sha512-vMUABimx3Nzf14CTD88l9RcVW5zZCygPh1X88pr37NSuFIMfX7/2aEPu9vUy7NAlKdJxlyTowZ/NS0pxlK4gVQ=="],
+    "@basestack/openfeature-provider": ["@basestack/openfeature-provider@1.0.6", "", { "dependencies": { "@openfeature/core": "^1.11.0" }, "peerDependencies": { "@openfeature/server-sdk": "^1.20.2", "@openfeature/web-sdk": "^1.7.3" }, "optionalPeers": ["@openfeature/server-sdk", "@openfeature/web-sdk"] }, "sha512-5PCV+ycFGu9OaU2D7vMLZUVhrgZoOuVhOY/0qHCSx6AafvVdx3Aq8N+qlDEmYn2zok+fgSIEd6bOxRFb/FXlLA=="],
 
     "@openfeature/core": ["@openfeature/core@1.11.0", "", {}, "sha512-P0u3/ht/oZCQT89fOed+laLk0kZR529a825cS02uPDglxXbE97irWYpDAeRGGVETIzKfuy+H2g8c3Ccv/tXJNQ=="],
 
     "@openfeature/server-sdk": ["@openfeature/server-sdk@1.22.0", "", { "peerDependencies": { "@openfeature/core": "^1.11.0" } }, "sha512-YBrf6SQkn0FNB/dRAtLEs41dvFMUE8CrQTwI+iLaMFUIqWlqGNJfGnulKSneEKS+2OgKTAC6DdmKcZ6tK7kBcg=="],
 
-    "hono": ["hono@4.12.18", "", {}, "sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ=="],
+    "hono": ["hono@4.12.26", "", {}, "sha512-uyZtpnYxM9CmQ7QsQknM4zN8EftNqhON1qYeIKM0Se67CCEe2c44xyGURwB0axX2fBDu1dqHrHAc1hmNT8ITkw=="],
 
     "typescript": ["typescript@6.0.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="],
   }
